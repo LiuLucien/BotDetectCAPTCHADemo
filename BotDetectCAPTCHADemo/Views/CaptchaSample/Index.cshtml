@@ -28,3 +28,14 @@
 @section Styles {
     <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
 }
+
+@section Scripts {
+    <script>
+        (function () {
+            var msg = '@(TempData["msg"]?.ToString())';
+            if (msg) {
+                alert(msg);
+            }
+        })();
+    </script>
+}
