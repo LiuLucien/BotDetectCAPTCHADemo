@@ -1,6 +1,11 @@
-﻿@{
+﻿@model BotDetectCAPTCHADemo.Models.ViewModels.CaptchaViewModel
+@using BotDetect.Web.Mvc;
+@{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
+@section Styles {
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
+}
