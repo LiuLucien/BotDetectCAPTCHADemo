@@ -7,7 +7,7 @@ namespace BotDetectCAPTCHADemo.Controllers
 {
     public class CaptchaSampleController : Controller
     {
-        // GET: CaptchaSample
+        // 基本範例 後端驗證
         public ActionResult Index()
         {
             return View();
@@ -34,7 +34,7 @@ namespace BotDetectCAPTCHADemo.Controllers
         }
 
         /// <summary>
-        /// JQueryValidation 前端驗證範例
+        /// jQuery Validation 前端驗證範例
         /// </summary>
         /// <returns></returns>
         public ActionResult JQueryValidation()

@@ -1,10 +1,10 @@
 ﻿@model BotDetectCAPTCHADemo.Models.ViewModels.CaptchaViewModel
 @using BotDetect.Web.Mvc;
 @{
-    ViewBag.Title = "JQueryValidation";
+    ViewBag.Title = "jQuery Validation(前端驗證)";
 }
 
-<h2>前端驗證 JQueryValidation</h2>
+<h2>JQueryValidation(前端驗證)</h2>
 @using (Html.BeginForm("JQueryValidation", "CaptchaSample", FormMethod.Post, new { @class = "captchaForm" }))
 {
     @Html.AntiForgeryToken()
