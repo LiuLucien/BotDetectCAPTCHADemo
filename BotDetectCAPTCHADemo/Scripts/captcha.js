@@ -1,4 +1,10 @@
 ﻿(function () {
+    $('.captcha-ReloadImage-btn').click(function () {
+        RegistrationCaptcha.ReloadImage();
+        this.blur();
+        return false;
+    });
+
     $(".captchaForm").validate({
         // the Captcha input must only be validated when the whole code string is
         // typed in, not after each individual character (onkeyup must be false)

@@ -49,5 +49,22 @@ namespace BotDetectCAPTCHADemo.Controllers
             MvcCaptcha.ResetCaptcha("ExampleCaptcha");
             return RedirectToAction(nameof(this.JQueryValidation));
         }
+
+        /// <summary>
+        /// 相關設定範例
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Setting()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Setting(CaptchaViewModel model)
+        {
+            //重啟Captcha
+            MvcCaptcha.ResetCaptcha("ExampleCaptcha");
+            return RedirectToAction(nameof(this.JQueryValidation));
+        }
     }
 }

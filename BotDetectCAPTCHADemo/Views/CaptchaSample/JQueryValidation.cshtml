@@ -4,7 +4,7 @@
     ViewBag.Title = "jQuery Validation(前端驗證)";
 }
 
-<h2>JQueryValidation(前端驗證)</h2>
+<h2>jQuery Validation(前端驗證)範例</h2>
 @using (Html.BeginForm("JQueryValidation", "CaptchaSample", FormMethod.Post, new { @class = "captchaForm" }))
 {
     @Html.AntiForgeryToken()
@@ -31,5 +31,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script src="~/Scripts/validationRules.js"></script>
+    <script src="~/Scripts/captcha.js"></script>
 }

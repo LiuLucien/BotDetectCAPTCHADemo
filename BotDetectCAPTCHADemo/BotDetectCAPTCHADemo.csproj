@@ -152,6 +152,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CaptchaHelper.cs" />
     <Compile Include="Models\ViewModels\CaptchaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -178,7 +179,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\validationRules.js" />
+    <Content Include="Scripts\captcha.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -195,6 +196,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\CaptchaSample\Index.cshtml" />
     <Content Include="Views\CaptchaSample\JQueryValidation.cshtml" />
+    <Content Include="Views\CaptchaSample\Setting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

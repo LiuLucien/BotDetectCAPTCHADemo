@@ -1,11 +1,12 @@
 ﻿@model BotDetectCAPTCHADemo.Models.ViewModels.CaptchaViewModel
 @using BotDetect.Web.Mvc;
+@using BotDetectCAPTCHADemo.Helpers;
 @{
-    ViewBag.Title = "基本驗證碼";
+    ViewBag.Title = "相關設定";
 }
 
-<h2>基本驗證碼範例</h2>
-@using (Html.BeginForm())
+<h2>相關設定範例</h2>
+@using (Html.BeginForm("Setting", "CaptchaSample", FormMethod.Post, new { @class = "captchaForm" }))
 {
     @Html.AntiForgeryToken()
     <div class="row">
@@ -13,13 +14,14 @@
             @Html.DisplayNameFor(model => model.CaptchaCode)
         </div>
         <div class="col col-xs-12">
-            @Html.EditorFor(model => model.CaptchaCode, new { htmlAttributes = new { @class = "form-control", placeholder = "請輸入驗證碼" } })
+            @Html.EditorFor(model => model.CaptchaCode, new { htmlAttributes = new { @class = "form-control captchaVal", placeholder = "請輸入驗證碼" } })
         </div>
         <div class="col col-xs-12">
-            @{ MvcCaptcha exampleCaptcha = new MvcCaptcha("ExampleCaptcha"); }
+            @{ MvcCaptcha exampleCaptcha = CaptchaHelper.GetRegistrationCaptcha(); }
             @Html.Captcha(exampleCaptcha)
         </div>
         <div class="col col-xs-12">
+            <button type="button" class="btn btn-default captcha-ReloadImage-btn">重新整理</button>
             <button type="submit" class="btn btn-info">驗證</button>
         </div>
     </div>
@@ -30,12 +32,6 @@
 }
 
 @section Scripts {
-    <script>
-        (function () {
-            var msg = '@(TempData["msg"]?.ToString())';
-            if (msg) {
-                alert(msg);
-            }
-        })();
-    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/captcha.js"></script>
 }
