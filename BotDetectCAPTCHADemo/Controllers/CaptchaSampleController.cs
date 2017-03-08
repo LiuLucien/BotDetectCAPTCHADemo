@@ -25,10 +25,29 @@ namespace BotDetectCAPTCHADemo.Controllers
             else
             {
                 msg = "驗證成功!";
+                //重啟Captcha
+                MvcCaptcha.ResetCaptcha("ExampleCaptcha");
             }
             TempData["msg"] = msg;
 
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(this.Index));
+        }
+
+        /// <summary>
+        /// JQueryValidation 前端驗證範例
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult JQueryValidation()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult JQueryValidation(CaptchaViewModel model)
+        {
+            //重啟Captcha
+            MvcCaptcha.ResetCaptcha("ExampleCaptcha");
+            return RedirectToAction(nameof(this.JQueryValidation));
         }
     }
 }
